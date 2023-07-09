@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Map, MapMarker } from 'react-kakao-maps-sdk';
+import BottomNavBar from './components/BottomNavBar';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex flex-col h-screen'>
+      <Map
+        center={{ lat: 33.55635, lng: 126.7958141 }}
+        className='grow w-full'
+      >
+        <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}>
+          <div style={{ color: "#000" }}>Hello World!</div>
+        </MapMarker>
+      </Map>
+      <BottomNavBar />
     </div>
-  );
+  )
 }
-
-export default App;
